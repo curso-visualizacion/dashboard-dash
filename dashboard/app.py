@@ -14,11 +14,36 @@ dataset.set_index("Country", inplace=True)
 
 column_options = [{"label": col, "value": col} for col in dataset.columns[4:]]
 
+controls = dbc.Card(
+    [
+        html.Div(
+            [
+                dbc.Label("Year"),
+                dcc.Dropdown(
+                    id="year",
+                    options=column_options,
+                    value="total",
+                ),
+            ]
+        ),
+    ],
+    style={"height": "100%"},
+)
+
 app.layout = dbc.Container(
     [
         html.H1("Distribución"),
-        dbc.Select(id="year", options=column_options, value="total"),
-        dcc.Graph(id="histogram"),
+        html.Hr(),
+        dbc.Row(
+            [
+                dbc.Col(controls, md=3),
+                dbc.Col(
+                    dcc.Graph(id="histogram"),
+                    md=9,
+                ),
+            ],
+            align="center",
+        ),
     ],
     className="p-5",
 )
