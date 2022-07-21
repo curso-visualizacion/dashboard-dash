@@ -71,6 +71,20 @@ diskcache = ["diskcache (>=5.2.1)", "multiprocess (>=0.70.12)", "psutil (>=5.8.0
 testing = ["beautifulsoup4 (>=4.8.2)", "lxml (>=4.6.2)", "percy (>=2.0.2)", "pytest (>=6.0.2)", "requests[security] (>=2.21.0)", "selenium (>=3.141.0)", "waitress (>=1.4.4)", "cryptography (<3.4)"]
 
 [[package]]
+name = "dash-bootstrap-components"
+version = "1.2.0"
+description = "Bootstrap themed components for use in Plotly Dash"
+category = "main"
+optional = false
+python-versions = ">=3.6, <4"
+
+[package.dependencies]
+dash = ">=2.0.0"
+
+[package.extras]
+pandas = ["numpy", "pandas"]
+
+[[package]]
 name = "dash-core-components"
 version = "2.0.0"
 description = "Core component suite for Dash"
@@ -373,7 +387,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "1a78246335848f2c6f9dc1fc453c0308c5fdf45ab75f8826d653cd283cd62ad7"
+content-hash = "29b2ef6697fbc513a5e80232feaafda47a38ebbf50b94e428c61c3e47f1597be"
 
 [metadata.files]
 atomicwrites = []
@@ -388,6 +402,7 @@ click = [
 ]
 colorama = []
 dash = []
+dash-bootstrap-components = []
 dash-core-components = []
 dash-html-components = []
 dash-table = []
